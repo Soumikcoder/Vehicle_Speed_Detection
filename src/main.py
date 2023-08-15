@@ -4,7 +4,7 @@ import numpy as np
 from model1 import * 
 
 # loading video
-capture=cv.VideoCapture("example_video/test3.mp4")
+capture=cv.VideoCapture("example_video/test1.mp4")
 if not capture.isOpened() :
 	print("file path of Video is wrong.......")
 ret,frame=capture.read()
