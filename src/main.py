@@ -31,8 +31,10 @@ while playing:
 			# returns no of vehicles
 			valid=model1.find_cars(prev_frame,frame)
 			cv.putText(prev_frame,f"Vehicle Detected:{len(valid)}",(55,15),cv.FONT_HERSHEY_COMPLEX,0.6,(0,180,0),2)
+
 			cv.imshow('Sample2',prev_frame)
 		else :
 			playing=False
 
 capture.release()
+
