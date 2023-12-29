@@ -36,8 +36,10 @@ while playing:
 			break
 		prev_frame=frame
 		ret,frame=capture.read()
-		frame=cv.resize(frame,(int(frame.shape[1]/2),int(frame.shape[0]/2)))
-
+		try:
+			frame=cv.resize(frame,(int(frame.shape[1]/2),int(frame.shape[0]/2)))
+		except :
+			break
 			# returns no of vehicles
 		valid=model.find_cars(prev_frame,frame)
 		cv.putText(prev_frame,f"Vehicle Detected:{len(valid)}",(55,15),cv.FONT_HERSHEY_COMPLEX,0.6,(0,180,0),2)
