@@ -1,6 +1,4 @@
 *.sublime-project
 *.sublime-workspace
-example_video/test2.mp4
-example_video/test3.mp4
 src/__pycache__
 .pytest_cache
