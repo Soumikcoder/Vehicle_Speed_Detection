@@ -27,7 +27,7 @@ elif video_id==2 :
 	car_size=80
 model= model1(y_up,y_down,car_size)
 #Press D to Quit the video
-
+correct_count= counter()
 #video loop
 while playing:
 		# displaying each frame
@@ -43,6 +43,8 @@ while playing:
 			# returns no of vehicles
 		valid=model.find_cars(prev_frame,frame)
 		cv.putText(prev_frame,f"Vehicle Detected:{len(valid)}",(55,15),cv.FONT_HERSHEY_COMPLEX,0.6,(0,180,0),2)
+		cv.putText(prev_frame,f"total count:{correct_count.total_count(len(valid))}",
+		(415,55),cv.FONT_HERSHEY_COMPLEX,0.6,(66, 87, 245),2)
 		cv.imshow('Sample2',prev_frame)
 
 capture.release()
