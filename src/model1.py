@@ -1,7 +1,15 @@
 import cv2 as cv 
 import numpy as np
 
-
+class counter():
+	def __init__(self):
+		self.count=0
+		self.prev_count=0
+	def total_count(self,current_count):
+		if current_count>self.prev_count:
+			self.count=self.count+(current_count-self.prev_count)
+		self.prev_count=current_count
+		return self.count
 class model1():
 	"""docstring for model1"""
 	algorithm=cv.bgsegm.createBackgroundSubtractorMOG()
